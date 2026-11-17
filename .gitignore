@@ -1,58 +1,40 @@
-# Quartus generated files
-*.qws
-*.qpf
-*.qsf
-*.sopcinfo
+# Папки генерации и кэш (весят сотни мегабайт, не нужны)
+db/
+incremental_db/
+output_files/
+simulation/
+hps_isw_handoff/
+syslink/
+
+# Временные файлы и логи
+*.bak
+*.rpt
+*.summary
+*.smsg
+*.csv
+*.log
+*.done
+*.jdi
+*.pin
+*.sld
 *.sof
 *.pof
-*.jic
-*.rbf
 *.svf
-*.cdf
 *.jam
 *.jbc
-*.hex
-*.tbl
-*.done
-*.cmp
-*.smsg
-*.summary
-*.sta.rpt
-*.fit.rpt
-*.map.rpt
-*.tan.rpt
-*.asm.rpt
-*.pin
-*.sip
-*.spd
-*.sld
-*.tcl
-*.bak
-*.backup
+*.qws
+*.tmp
 
-# Incremental compilation
-incremental_db/
-db/
+# Файлы настроек среды (генерируются автоматически)
+.c5review
+.fit.smsg
+.map.smsg
+.par.smsg
+.sim.smsg
+.sta.smsg
+.tan.smsg
 
-# Simulation files
-simulation/
-modelsim.ini
-vsim.wlf
-transcript
-
-# Generated HDL
-output_files/
-greybox_tmp/
-hc_output/
-
-# IDE files
-.cproject
-.project
-.settings/
-
-# OS files
+# Системные файлы ОС
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
+desktop.ini
