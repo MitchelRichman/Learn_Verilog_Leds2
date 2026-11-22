@@ -2,12 +2,17 @@ module top_module(   //входы выходы
 	input wire clk,
 	input wire rst_n,
 	input wire mode_btn,
-	output wire [3:0] leds
+	output wire [3:0] leds,
+	output wire uart_tx_pin
 );
 
 	wire w_pulse;
 	wire [1:0] w_state;
-
+	wire w_tick;
+	wire w_tick_uart_tx_pin;
+	wire [7:0] w_tx_data;
+	wire w_tx_start;
+	wire w_tx_busy;
 
 	//debounce
 	debounce u_debounce(
@@ -36,13 +41,23 @@ module top_module(   //входы выходы
 	);
 	
 	
-	wire w_tick;
 	
-	baud_gen u_baud(
+	
+	baud_gen u_baud( //счетчик тиков под скорость передачи данных  
 		.clk(clk),
 		.tick(w_tick)
-	)
-	
+	);
+	uart_tx u_uart_tx(
+		.clk(clk),
+		.rst_n(rst_n),
+		.tick(w_tick), 
+		.data_in(w_tx_data),
+		.tx_start(w_tx_start),
+		.uart_tx(uart_tx_pin),
+		.tx_busy(w_tx_busy)
+	 
+	 
+	);
 	
 	
 	
