@@ -36,8 +36,8 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name DEVICE 5CGXFC7C7F23C8
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
 set_global_assignment -name TOP_LEVEL_ENTITY top_module
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.0.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "01:57:38  NOVEMBER 18, 2026"
@@ -53,7 +53,6 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[3]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[2]
@@ -61,3 +60,13 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[1]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to mode_btn
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to leds[0]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rst_n
+set_location_assignment PIN_84 -to leds[0]
+set_location_assignment PIN_85 -to leds[1]
+set_location_assignment PIN_86 -to leds[2]
+set_location_assignment PIN_87 -to leds[3]
+set_location_assignment PIN_23 -to clk
+set_location_assignment PIN_88 -to mode_btn
+set_location_assignment PIN_25 -to rst_n
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VERILOG_FILE uart_tx.v
+set_global_assignment -name VERILOG_FILE baud_gen.v

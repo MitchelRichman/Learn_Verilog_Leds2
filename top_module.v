@@ -35,6 +35,20 @@ module top_module(   //входы выходы
 	
 	);
 	
+	
+	wire w_tick;
+	
+	baud_gen u_baud(
+		.clk(clk),
+		.tick(w_tick)
+	)
+	
+	
+	
+	
+	
+	
+	
 endmodule
 
 
